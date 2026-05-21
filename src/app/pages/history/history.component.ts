@@ -8,7 +8,6 @@ import { PageHeaderComponent } from '../../components/page-header/page-header.co
   standalone: true,
   imports: [EventLogComponent, PageHeaderComponent],
   templateUrl: './history.html',
-  styleUrl: './history.css',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HistoryPage {
