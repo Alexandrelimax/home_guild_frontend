@@ -1,0 +1,60 @@
+<div class="quest-card group relative p-5 bg-slate-900/40 border rounded-xl transition-all duration-300"
+    [class]="statusConfig().border">
+
+    <div class="flex justify-between items-start mb-4">
+        <div class="flex flex-col">
+            <span class="text-[10px] font-mono uppercase tracking-[0.2em] text-slate-500">Recompensas</span>
+            <div class="flex gap-3 mt-1">
+                <span class="text-xs font-orbitron text-amber-400">+{{ quest().xp }} <span
+                        class="text-[8px] opacity-70">XP</span></span>
+                <span class="text-xs font-orbitron text-cyan-400">+{{ quest().bits }} <span
+                        class="text-[8px] opacity-70">BITS</span></span>
+            </div>
+        </div>
+
+        <div class="flex items-center gap-1.5 px-2 py-1 bg-black/40 rounded border border-white/5">
+            <!-- <span class="material-icons text-[14px]" [ngClass]="statusConfig().color"></span> -->
+            <span class="text-[9px] font-orbitron font-bold" [class]="statusConfig().color">
+                {{ statusConfig().label }}
+            </span>
+        </div>
+    </div>
+
+    <div class="mb-6">
+        <h3
+            class="text-sm font-orbitron text-slate-100 uppercase tracking-tight group-hover:text-white transition-colors">
+            {{ quest().title }}
+        </h3>
+        <p class="text-[11px] text-slate-500 mt-2 font-mono leading-relaxed">
+            {{ quest().description }}
+        </p>
+    </div>
+
+    <div class="flex gap-2 pt-4 border-t border-white/5">
+
+        @if (quest().status === 'pending') {
+        <button (click)="onSubmit.emit(quest().id)"
+            class="w-full py-1.5 bg-cyan-900/20 hover:bg-cyan-600 text-cyan-400 hover:text-white border border-cyan-500/20 rounded text-[9px] font-orbitron uppercase transition-all animate-pulse">
+            Enviar para Avaliação
+        </button>
+        }
+
+        @else if (quest().status === 'analyzing') {
+        <div class="flex w-full gap-2">
+            <div
+                class="flex-1 py-1.5 text-center bg-amber-500/10 text-amber-500 rounded text-[8px] font-orbitron border border-amber-500/20 uppercase">
+                EM ANÁLISE
+            </div>
+        </div>
+        }
+
+        @else if (quest().status === 'approved') {
+        <div class="flex w-full gap-2">
+            <div
+                class="flex-1 py-1.5 text-center bg-emerald-500/10 text-emerald-500 rounded text-[8px] font-orbitron border border-emerald-500/20 uppercase">
+                MISSÃO_CONCLUÍDA
+            </div>
+        </div>
+        }
+    </div>
+</div>

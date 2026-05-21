@@ -1,5 +1,4 @@
 import { Component, inject, OnInit, signal, DestroyRef, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AdminService } from '../../../services/admin.service';
@@ -10,7 +9,7 @@ import { PlayerPickerComponent } from '../../../components/player-picker/player-
 @Component({
   selector: 'app-admin-tasks-create',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, PlayerPickerComponent],
+  imports: [ReactiveFormsModule, PlayerPickerComponent],
   templateUrl: './tasks-create.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

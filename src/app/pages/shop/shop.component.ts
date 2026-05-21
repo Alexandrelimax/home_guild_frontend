@@ -1,5 +1,4 @@
 import { Component, inject, OnInit, ChangeDetectionStrategy, DestroyRef } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { RewardService } from '../../services/reward.service';
@@ -13,7 +12,7 @@ import { PageHeaderComponent } from '../../components/page-header/page-header.co
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [CommonModule, RewardCardComponent, PageHeaderComponent],
+  imports: [RewardCardComponent, PageHeaderComponent],
   templateUrl: './shop.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

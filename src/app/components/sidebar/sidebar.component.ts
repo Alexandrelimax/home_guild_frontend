@@ -1,6 +1,7 @@
 import { Component, input, output, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-sidebar',
@@ -12,6 +13,8 @@ import { AuthService } from '../../services/auth.service';
 export class SidebarComponent {
   isOpen = input.required<boolean>();
   close = output<void>();
+
+  readonly appVersion = environment.ui.appVersion;
 
   private auth = inject(AuthService);
 

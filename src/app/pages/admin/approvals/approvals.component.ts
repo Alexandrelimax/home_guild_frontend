@@ -1,5 +1,4 @@
 import { Component, inject, signal, OnInit, DestroyRef, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AdminService } from '../../../services/admin.service';
 import { QuestWithUserDTO } from '../../../interfaces/dtos';
@@ -8,7 +7,7 @@ import { EventService } from '../../../services/event.service';
 @Component({
   selector: 'app-admin-approvals',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './approvals.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })

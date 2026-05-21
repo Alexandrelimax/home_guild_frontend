@@ -1,5 +1,4 @@
 import { Component, inject, OnInit, DestroyRef, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { QuestService } from '../../services/quest.service';
@@ -12,7 +11,7 @@ import { PageHeaderComponent } from '../../components/page-header/page-header.co
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, QuestCardComponent, PageHeaderComponent],
+  imports: [QuestCardComponent, PageHeaderComponent],
   templateUrl: './dashboard.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
@@ -30,9 +29,6 @@ export class DashboardPage implements OnInit {
         takeUntilDestroyed(this.destroyRef)
       )
       .subscribe({
-        next: (data) => {
-          if (data) console.log('Dashboard carregado com sucesso');
-        },
         error: (err) => console.error('Erro ao carregar dashboard', err)
       });
   }

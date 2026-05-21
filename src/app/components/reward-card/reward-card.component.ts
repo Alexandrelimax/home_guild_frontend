@@ -1,12 +1,11 @@
 import { Component, input, output, computed } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { Reward, User } from '../../interfaces/interface';
 import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-reward-card',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './reward-card.html',
   styleUrls: ['./reward-card.css']
 })

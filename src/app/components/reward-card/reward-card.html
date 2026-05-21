@@ -1,9 +1,9 @@
 <div class="reward-card p-6 rounded-xl border bg-slate-900/60 flex flex-col justify-between transition-all duration-300 relative group"
-    [ngClass]="themeClass()" [class.opacity-40]="!canAfford() && !reward().redeemed">
+    [class]="themeClass()" [class.opacity-40]="!canAfford() && !reward().redeemed">
 
     <div class="flex justify-between items-start mb-4">
         <div class="relative w-20 h-20 flex items-center justify-center -ml-2 -mt-2">
-            <div class="absolute inset-0 blur-2xl rounded-full opacity-40 animate-pulse" [ngClass]="glowClass()">
+            <div class="absolute inset-0 blur-2xl rounded-full opacity-40 animate-pulse" [class]="glowClass()">
             </div>
 
             <img [src]="rewardIcon()" [alt]="reward().title"
@@ -11,7 +11,7 @@
         </div>
 
         <div class="text-right">
-            <span class="text-[10px] uppercase tracking-[0.2em] font-bold" [ngClass]="accentTextClass()">
+            <span class="text-[10px] uppercase tracking-[0.2em] font-bold" [class]="accentTextClass()">
                 {{ isMilestone() ? 'Mastery' : 'Consumível' }}
             </span>
 
@@ -37,7 +37,7 @@
 
     <button (click)="redeem.emit(reward())" [disabled]="reward().redeemed || !canAfford()"
         class="w-full py-2.5 rounded font-orbitron text-[10px] tracking-widest uppercase transition-all active:scale-95 disabled:opacity-30 disabled:cursor-not-allowed"
-        [ngClass]="buttonClass()">
+        [class]="buttonClass()">
 
         @if (reward().redeemed) {
         <span class="flex items-center justify-center gap-2">
