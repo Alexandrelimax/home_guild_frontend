@@ -1,0 +1,9 @@
+<div [class]="'rounded-xl p-5 flex flex-col items-center relative overflow-hidden group ' + (accentClass() || 'bg-slate-900/40 border border-slate-800')">
+  <span class="text-[9px] font-mono uppercase tracking-widest mb-2 z-10"
+    [class]="accentClass() ? 'text-current' : 'text-slate-500'">{{ label() }}</span>
+  <span class="text-3xl font-orbitron font-bold z-10"
+    [class]="accentClass() ? 'text-current' : 'text-white'">{{ value() }}</span>
+  @if (pulse() && (value() ?? 0) > 0) {
+  <div class="absolute inset-0 opacity-5 animate-pulse bg-current"></div>
+  }
+</div>

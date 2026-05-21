@@ -2,12 +2,13 @@ import { Component, inject, signal, OnInit, DestroyRef, ChangeDetectionStrategy 
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { AdminService } from '../../../services/admin.service';
 import { AdminAnalyticsResponse } from '../../../interfaces/dtos';
-import { XpBarComponent } from '../../../components/xp-bar/xp-bar.component';
+import { AdminStatCardComponent } from '../../../components/admin/stat-card/stat-card.component';
+import { AdminPlayerCardComponent } from '../../../components/admin/player-card/player-card.component';
 
 @Component({
   selector: 'app-admin-dashboard',
   standalone: true,
-  imports: [XpBarComponent],
+  imports: [AdminStatCardComponent, AdminPlayerCardComponent],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
   changeDetection: ChangeDetectionStrategy.OnPush
