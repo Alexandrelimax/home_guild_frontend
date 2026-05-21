@@ -94,9 +94,14 @@ export class AdminEventsCreatePage implements OnInit {
           this.badgeDescription.set('');
           this.badgeIcon.set('');
           this.badgeCardImage.set('');
+          this.xp.set(1000);
+          this.bits.set(200);
+          this.badgeRarity.set('comum');
+          this.targetUserIds.set(this.players().map(p => p.id));
           this.isSubmitting.set(false);
 
-          setTimeout(() => this.successMessage.set(null), environment.ui.successMessageTimeoutMs);
+          const timeoutId = setTimeout(() => this.successMessage.set(null), environment.ui.successMessageTimeoutMs);
+          this.destroyRef.onDestroy(() => clearTimeout(timeoutId));
         },
         error: (err) => {
           this.errorMessage.set('Erro ao criar evento: ' + (err.error?.detail || err.message));
