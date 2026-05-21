@@ -33,7 +33,7 @@ export class RewardCardComponent {
 
     const level = this.reward().min_level;
     if (level >= environment.game.milestoneLevels.gold) return 'border-amber-400/50 shadow-[0_0_20px_rgba(251,191,36,0.15)]'; // Ouro
-    if (level === environment.game.milestoneLevels.silver) return 'border-slate-400/40 shadow-[0_0_20px_rgba(148,163,184,0.15)]'; // Prata
+    if (level >= environment.game.milestoneLevels.silver) return 'border-slate-400/40 shadow-[0_0_20px_rgba(148,163,184,0.15)]'; // Prata
     return 'border-amber-800/40'; // Bronze
   });
 
@@ -43,7 +43,7 @@ export class RewardCardComponent {
 
     const level = this.reward().min_level;
     if (level >= environment.game.milestoneLevels.gold) return 'text-amber-400';
-    if (level === environment.game.milestoneLevels.silver) return 'text-slate-300';
+    if (level >= environment.game.milestoneLevels.silver) return 'text-slate-300';
     return 'text-amber-600';
   });
 
@@ -53,7 +53,7 @@ export class RewardCardComponent {
 
     const level = this.reward().min_level;
     if (level >= environment.game.milestoneLevels.gold) return 'bg-amber-600/20 hover:bg-amber-500 text-amber-100 border border-amber-500/50';
-    if (level === environment.game.milestoneLevels.silver) return 'bg-slate-700/40 hover:bg-slate-500 text-slate-100 border border-slate-500/50';
+    if (level >= environment.game.milestoneLevels.silver) return 'bg-slate-700/40 hover:bg-slate-500 text-slate-100 border border-slate-500/50';
     return 'bg-amber-900/40 hover:bg-amber-700 text-amber-100';
   });
 
@@ -72,7 +72,7 @@ export class RewardCardComponent {
 
     const level = this.reward().min_level;
     if (level >= environment.game.milestoneLevels.gold) return 'bg-amber-400';
-    if (level === environment.game.milestoneLevels.silver) return 'bg-slate-200'; // Prata polido
+    if (level >= environment.game.milestoneLevels.silver) return 'bg-slate-200'; // Prata polido
     return 'bg-orange-800';
   });
 }

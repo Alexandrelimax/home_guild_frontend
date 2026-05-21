@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AdminService } from '../../../services/admin.service';
 import { EventCreateRequest } from '../../../interfaces/dtos';
 import { User } from '../../../interfaces/interface';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-admin-events-create',
@@ -88,7 +89,7 @@ export class AdminEventsCreatePage implements OnInit {
         this.badgeCardImage.set('');
         this.isSubmitting.set(false);
         
-        setTimeout(() => this.successMessage.set(null), 4000);
+        setTimeout(() => this.successMessage.set(null), environment.ui.successMessageTimeoutMs);
       },
       error: (err) => {
         this.errorMessage.set('Erro ao criar evento: ' + (err.error?.detail || err.message));
