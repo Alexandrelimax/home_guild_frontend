@@ -6,12 +6,12 @@ export const routes: Routes = [
     {
         path: 'login',
         loadComponent: () =>
-            import('./players/pages/login/login.component').then(m => m.LoginPage)
+            import('./auth/login/login.component').then(m => m.LoginPage)
     },
     {
         path: 'register',
         loadComponent: () =>
-            import('./players/pages/register/register.component').then(m => m.RegisterPage)
+            import('./auth/register/register.component').then(m => m.RegisterPage)
     },
 
     // --- ROTAS DO ADMINISTRADOR (ALEXANDRE E KATE) ---
