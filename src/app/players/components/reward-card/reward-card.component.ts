@@ -59,11 +59,11 @@ export class RewardCardComponent {
   rewardIcon = computed(() => {
     if (this.isMilestone()) {
       const level = this.reward().min_level ?? 0;
-      if (level >= environment.game.milestoneLevels.gold) return 'assets/icons/mastery_gold.svg';
-      if (level >= environment.game.milestoneLevels.silver) return 'assets/icons/mastery_silver.svg';
-      return 'assets/icons/mastery_bronze.svg';
+      if (level >= environment.game.milestoneLevels.gold) return 'assets/icons/mastery_15.png';
+      if (level >= environment.game.milestoneLevels.silver) return 'assets/icons/mastery_10.png';
+      return 'assets/icons/mastery_5.png';
     }
-    return 'assets/icons/bits.svg';
+    return 'assets/coins/saco_bits.png';
   });
 
   // O blur de fundo (Glow)
